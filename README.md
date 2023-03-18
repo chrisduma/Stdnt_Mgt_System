@@ -130,11 +130,12 @@ To use this API, follow these steps:
 
 <br />
 
-[!testing Screenshots][screenshot-1]](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_1.png)
-[!testing Screenshots][screenshot-2]](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_2.png)
-[!testing Screenshots][screenshot-3]](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_3.png)
-[!testing Screenshots][screenshot-4]](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_4.png)
-[!testing Screenshots][screenshot-5]](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_5.png)
+<!-- [Capture_1](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_1.png) -->
+<!-- [Capture_2](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_2.png) -->
+<!-- [Capture_3](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_3.png) -->
+<!-- [Capture_4](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_4.png) -->
+<!-- [Capture_5](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_5.png) -->
+
 
 <br/>
 
