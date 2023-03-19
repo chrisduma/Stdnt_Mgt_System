@@ -1,4 +1,5 @@
 <!-- Back to Top Navigation Anchor -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <a name="readme-top"></a>
 
 <!-- Project Shields -->
