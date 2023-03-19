@@ -1,4 +1,4 @@
-from flask import request
+# from flask import request
 from flask_restx import Namespace, Resource, fields
 from ..models.users import User
 from ..utils.decorators import is_admin
@@ -23,7 +23,7 @@ User_Model = auth_namespace.model(
     'email': fields.String(required=True, description='An email'),
     'password_hash': fields.String(required=True, description='A Password'),
     'role': fields.String(required=True, enum=['ADMIN','STUDENT']),
-    'created_on': fields.DateTime(description='This shows the user is created')
+    'created_on': fields.DateTime(description='This shows when the user was created')
   }
 )
 
@@ -60,9 +60,9 @@ class Login(Resource):
 
   @auth_namespace.expect(Login_Model)
   def post(self):
+
     # data = request.get_json()
     data = auth_namespace.payload 
-
 
     username = data['username']
     password = data['password']

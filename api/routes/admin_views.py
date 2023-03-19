@@ -24,8 +24,8 @@ admin_signup_model = admin_namespace.model(
 admin_model = admin_namespace.model(
     'Admin', {
         'id': fields.Integer(description="Admin's User ID"),
-        'full_name': fields.String(required=True, description="Full_Name"),
-        'username': fields.String(required=True, description="username"),
+        'full_name': fields.String(required=True, description="Admin's Full_Name"),
+        'username': fields.String(required=True, description="Admin's username"),
         'email': fields.String(required=True, description="Admin's Email"),
         'role': fields.String(required=True, description='user role in school'),
         # 'created_on': fields.DateTime(description='Date&time when the admin was added')
@@ -65,7 +65,7 @@ class Register_Admin(Resource):
         data = admin_namespace.payload
 
         # Check if the admin account already exists
-        admin = Admin.query.filter_by(username=data['username']).first()
+        admin = Admin.query.filter_by(username=data['username'], email=data['email']).first()
         if admin:
             return {"message": "Admin Account Already Exists"}, HTTPStatus.CONFLICT
 
