@@ -69,18 +69,17 @@ class Login(Resource):
 
 
     if (user is not None) and check_password_hash(user.password_hash, password):
+        access_token = create_access_token(identity=user.id)
+        refresh_token = create_refresh_token(identity=user.id)
 
-      access_token = create_access_token(identity=user.id)
-      refresh_token = create_refresh_token(identity=user.id)
+        response = {
+          'access_token': access_token,
+          'refresh_token': refresh_token
+        }
 
-      response = {
-        'access_token': access_token,
-        'refresh_token': refresh_token
-      }
-
-      print(response)
-      return response, HTTPStatus.CREATED
-    
+        # print(response)
+        return response, HTTPStatus.OK
+      
 
 # on Refresh
 @auth_namespace.route('/refresh')
