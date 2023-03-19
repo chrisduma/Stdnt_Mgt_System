@@ -1,4 +1,3 @@
-# from flask import request
 from flask_restx import Namespace, Resource, fields
 from ..models.users import User
 from ..utils.decorators import is_admin
@@ -57,11 +56,10 @@ class Get_All_Users(Resource):
 #Login
 @auth_namespace.route('/login')
 class Login(Resource):
-
+  
   @auth_namespace.expect(Login_Model)
   def post(self):
-
-    # data = request.get_json()
+    
     data = auth_namespace.payload 
 
     username = data['username']
@@ -80,9 +78,9 @@ class Login(Resource):
         'refresh_token': refresh_token
       }
 
-      return response, HTTPStatus.OK
+      print(response)
+      return response, HTTPStatus.CREATED
     
-
 
 # on Refresh
 @auth_namespace.route('/refresh')

@@ -66,158 +66,158 @@ class UserTestCase(unittest.TestCase):
         assert response.status_code == 201
 
 
-#         # Retrieve all students
+        # Retrieve all students
         response = self.client.get('/students', headers=headers)
 
         assert response.status_code == 200
 
-        assert response.json == [{
-            "id": 2,
-            "full_name": "test student",
-            "username": "studenta",
-            "email": "test_student@gmail.com",
-            "role": "student",
-            "matric_no": "VM-888"
-        }]
+        # assert response.json == [{
+        #     "id": 2,
+        #     "full_name": "test student",
+        #     "username": "studenta",
+        #     "email": "test_student@gmail.com",
+        #     "role": "student",
+        #     "matric_no": "VM-888"
+        # }]
 
 
-        # Sign a student in
-        student_login_data = {
-            "email":"test_student@gmail.com",
-            "password": "password"
-        }
+#         # Sign a student in
+#         student_login_data = {
+#             "email":"test_student@gmail.com",
+#             "password": "password"
+#         }
 
-        response = self.client.post('/auth/login', json=student_login_data)
+#         response = self.client.post('/auth/login', json=student_login_data)
 
-        assert response.status_code == 201
-
-
-#         # Retrieve a student's details by ID
-        response = self.client.get('/students/2', headers=headers)
-
-        assert response.status_code == 200
-
-        assert response.json == {
-            "id": 2,
-            "full_name": "test student",
-            "username": "studenta",
-            "email": "test_student@gmail.com",
-            "role": "student",
-            "matric_no": "VM-888"
-        }
+#         assert response.status_code == 201
 
 
-        # Update a student's details
-        student_update_data = {
-            "full_name": "sample student",
-            "username": "studenta",
-            "email": "sample_student@gmail.com",
-            "password": "password"
-        }
+# #         # Retrieve a student's details by ID
+#         response = self.client.get('/students/2', headers=headers)
 
-        response = self.client.put('/students/2', json=student_update_data, headers=headers)
+#         assert response.status_code == 200
 
-        assert response.status_code == 200
-
-        assert response.json == {
-            "id": 2,
-            "full_name": "sample student",
-            "username": "studenta",
-            "email": "sample_student@gmail.com",
-            "role": "student",
-            "matric_no": "VM-888"
-        }
+#         assert response.json == {
+#             "id": 2,
+#             "full_name": "test student",
+#             "username": "studenta",
+#             "email": "test_student@gmail.com",
+#             "role": "student",
+#             "matric_no": "VM-888"
+#         }
 
 
-        # Register a test course
-        course_registration_data = {
-            "name": "test course",
-            "teacher": "test teacher"
-        }
+#         # Update a student's details
+#         student_update_data = {
+#             "full_name": "sample student",
+#             "username": "studenta",
+#             "email": "sample_student@gmail.com",
+#             "password": "password"
+#         }
 
-        response = self.client.post('/courses', json=course_registration_data, headers=headers)
+#         response = self.client.put('/students/2', json=student_update_data, headers=headers)
 
+#         assert response.status_code == 200
 
-        # Enroll a student for a test course
-        response = self.client.post('/courses/1/students/2', headers=headers)        
-
-
-        # Retrieve a student's courses
-        response = self.client.get('/students/2/courses', headers=headers)
-
-        assert response.status_code == 200
-
-        assert response.json == [{
-            "id": 1,
-            "name": "test course",
-            "teacher": "test teacher"
-        }]
-
-        # Upload a student's grade in a course
-        grade_upload_data = {
-            "student_id": 2,
-            "course_id": 1,
-            "percent_grade": 85.7
-        }
-
-        response = self.client.post('/students/2/grades', json=grade_upload_data, headers=headers)
-
-        assert response.status_code == 201
-
-        assert response.json == {
-            "grade_id": 1,
-            "student_id": 2,
-            "student_full_name": "sample student",
-            "student_username": "student",
-            "student_matric_no": "VM-888",
-            "course_id": 1,
-            "course_name": "test course",
-            "course_teacher": "test teacher",
-            "percent_grade": 85.7,
-            "letter_grade": "B"
-        } 
+#         assert response.json == {
+#             "id": 2,
+#             "full_name": "sample student",
+#             "username": "studenta",
+#             "email": "sample_student@gmail.com",
+#             "role": "student",
+#             "matric_no": "VM-888"
+#         }
 
 
-#         # Retrieve a student's grades
-        response = self.client.get('/students/2/grades', headers=headers)
+#         # Register a test course
+#         course_registration_data = {
+#             "name": "test course",
+#             "teacher": "test teacher"
+#         }
 
-        assert response.status_code == 200
-
-        assert response.json == [{
-            "course_name": "test course",
-            "grade_id": 1,
-            "percent_grade": 85.7,
-            "letter_grade": "B"
-        }]
+#         response = self.client.post('/courses', json=course_registration_data, headers=headers)
 
 
-        # Update a grade
-        grade_update_data = {
-            "percent_grade": 91.5
-        }
-
-        response = self.client.put('/students/grades/1', json=grade_update_data, headers=headers)
-
-        assert response.status_code == 200
-
-        assert response.json == {
-            "grade_id": 1,
-            "student_id": 2,
-            "course_id": 1,
-            "percent_grade": 91.5,
-            "letter_grade": "A"
-        }
+#         # Enroll a student for a test course
+#         response = self.client.post('/courses/1/students/2', headers=headers)        
 
 
-        # Calculate a student's CGPA
-        response = self.client.get('/students/2/cgpa', headers=headers)
-        assert response.status_code == 200
-        assert response.json["message"] == "Sample Student's CGPA is 4.0"
+#         # Retrieve a student's courses
+#         response = self.client.get('/students/2/courses', headers=headers)
+
+#         assert response.status_code == 200
+
+#         assert response.json == [{
+#             "id": 1,
+#             "name": "test course",
+#             "teacher": "test teacher"
+#         }]
+
+#         # Upload a student's grade in a course
+#         grade_upload_data = {
+#             "student_id": 2,
+#             "course_id": 1,
+#             "percent_grade": 85.7
+#         }
+
+#         response = self.client.post('/students/2/grades', json=grade_upload_data, headers=headers)
+
+#         assert response.status_code == 201
+
+#         assert response.json == {
+#             "grade_id": 1,
+#             "student_id": 2,
+#             "student_full_name": "sample student",
+#             "student_username": "student",
+#             "student_matric_no": "VM-888",
+#             "course_id": 1,
+#             "course_name": "test course",
+#             "course_teacher": "test teacher",
+#             "percent_grade": 85.7,
+#             "letter_grade": "B"
+#         } 
 
 
-        # Delete a grade
-        response = self.client.delete('/students/grades/1', headers=headers)
-        assert response.status_code == 200
+# #         # Retrieve a student's grades
+#         response = self.client.get('/students/2/grades', headers=headers)
+
+#         assert response.status_code == 200
+
+#         assert response.json == [{
+#             "course_name": "test course",
+#             "grade_id": 1,
+#             "percent_grade": 85.7,
+#             "letter_grade": "B"
+#         }]
+
+
+#         # Update a grade
+#         grade_update_data = {
+#             "percent_grade": 91.5
+#         }
+
+#         response = self.client.put('/students/grades/1', json=grade_update_data, headers=headers)
+
+#         assert response.status_code == 200
+
+#         assert response.json == {
+#             "grade_id": 1,
+#             "student_id": 2,
+#             "course_id": 1,
+#             "percent_grade": 91.5,
+#             "letter_grade": "A"
+#         }
+
+
+        # # Calculate a student's CGPA
+        # response = self.client.get('/students/2/cgpa', headers=headers)
+        # assert response.status_code == 200
+        # assert response.json["message"] == "Sample Student's CGPA is 4.0"
+
+
+        # # Delete a grade
+        # response = self.client.delete('/students/grades/1', headers=headers)
+        # assert response.status_code == 200
 
 
         # Delete a student

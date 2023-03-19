@@ -8,12 +8,11 @@ class User(db.Model):
   __tablename__='users'
 
   id = db.Column(db.Integer(), primary_key=True)
-
   full_name = db.Column(db.String(60), nullable=False)
   username = db.Column(db.String(60), nullable=False, unique=True)
   email = db.Column(db.String(60), nullable=False, unique=True)
-  password_hash = db.Column(db.String(), nullable=False)
-  role = db.Column(db.String())
+  password_hash = db.Column(db.String(100), nullable=False)
+  role = db.Column(db.String(60))
   created_on = db.Column(db.DateTime(), default=datetime.utcnow)
 
   __mapper_args__ = {
@@ -38,3 +37,4 @@ class User(db.Model):
   @classmethod
   def get_user_by_id(cls, id):
     return cls.query.get_or_404(id)
+  

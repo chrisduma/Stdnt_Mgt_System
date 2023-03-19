@@ -107,23 +107,22 @@ def create_app(config_app=config_dict['dev']):
   def not_found(error):
     return {"error": "Not Found"}, 404
 
+
   @api.errorhandler(MethodNotAllowed)
   def method_error(error):
     return {"error": "This method is not allowed"}, 404
 
 
-
-
   @app.shell_context_processor
   def make_shell_context():
-    return {
-      'db': db,
-      'user': User,
-      'student': Student,
-      'admin': Admin,
-      'course': Course,
-      'enroll': Enrolled,
-      'grade': Grading
-    }
+      return {
+        'db': db,
+        'user': User,
+        'student': Student,
+        'admin': Admin,
+        'course': Course,
+        'enroll': Enrolled,
+        'grade': Grading
+      }
 
   return app

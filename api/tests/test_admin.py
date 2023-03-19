@@ -65,7 +65,7 @@ class User_TestCase(unittest.TestCase):
         }
 
 
-        # Retrieve all admins
+#         # Retrieve all admins
         response = self.client.get('/admin', headers=headers)
 
         assert response.status_code == 200
@@ -115,7 +115,7 @@ class User_TestCase(unittest.TestCase):
         }
 
 
-        # # Delete an admin
+#         # # Delete an admin
         response = self.client.delete('/admin/1', headers=headers)
 
         assert response.status_code == 200
