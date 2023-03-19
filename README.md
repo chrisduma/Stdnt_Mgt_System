@@ -1,5 +1,12 @@
 <!-- Back to Top Navigation Anchor -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- <img src="(https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_1.PNG)" width="50%"/>
+<img src="(https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_2.PNG)" width="50%"/>
+<img src="(https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_3.PNG)" width="50%"/>
+<img src="(https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_4.PNG)" width="50%"/>
+<img src="(https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_5.PNG)" width="50%"/> -->
+
+
 <a name="readme-top"></a>
 
 <!-- Project Shields -->
@@ -131,11 +138,12 @@ To use this API, follow these steps:
 
 <br />
 
-<!-- [Capture_1](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_1.png) -->
-<!-- [Capture_2](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_2.png) -->
-<!-- [Capture_3](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_3.png) -->
-<!-- [Capture_4](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_4.png) -->
-<!-- [Capture_5](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_5.png) -->
+![Capture 1](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_1.PNG)
+![Capture 2](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_2.PNG)
+![Capture 3](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_3.PNG)
+![Capture 4](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_4.PNG)
+![Capture 5](https://github.com/ChrizDuma/Stdnt_Mgt_System/blob/main/images/Capture_5.PNG)
+
 
 
 <br/>
